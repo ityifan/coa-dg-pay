@@ -1,0 +1,36 @@
+{
+  "name": "coa-dg-pay",
+  "version": "0.0.1",
+  "description": "这是一个轻量的汇付支付SDK服务商版 for Node.js",
+  "main": "src/index.js",
+  "scripts": {
+    "tsc": "tsc -w",
+    "build": "rm -rf dist && tsc && cp package.json *.md dist && rm -rf dist/test",
+    "lint": "eslint . ",
+    "prettier": "prettier -w .",
+    "sync": "curl -X PUT 'https://npm.taobao.org/sync/coa-dg-pay?sync_upstream=true'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ityifan/coa-dg-pay.git"
+  },
+  "keywords": [
+    "coajs",
+    "coa",
+    "wx-isv",
+    "wx",
+    "isv"
+  ],
+  "author": "leon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ityifan/coa-dg-pay/issues"
+  },
+  "homepage": "https://github.com/ityifan/coa-dg-pay#readme",
+  "dependencies": {
+    "coa-error": "^1.5.2",
+    "coa-helper": "^1.2.1",
+    "coa-secure": "^1.2.0",
+    "form-data": "^4.0.0"
+  }
+}
