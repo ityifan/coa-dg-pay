@@ -104,14 +104,21 @@ export class DgPayBin {
 
     // 请求记录
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onRequest(params: any, content: any, response: any) { }
+    onRequest(params: any, content: any, response: any) {
+        // 重写方法
+
+    }
 
     // 请求失败
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onRequestError(url: any, params: any, response: any, error: any) { }
+    onRequestError(url: any, params: any, response: any, error: any) {
+        // 重写方法
+
+    }
 
     // 请求时间过长
     onRequestTooLong(
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         url: any,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         param: any,
@@ -119,7 +126,10 @@ export class DgPayBin {
         response: any,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         time: { startAt: number; endAt: number }
-    ) { }
+
+    ) {
+        // 重写方法
+    }
 
     // 构造请求参数
     private buildParams(data: Record<string, any>) {
@@ -159,6 +169,7 @@ export class DgPayBin {
         return data
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     verifyAsyncSign(res: any, unErrorCode?: Record<string, any>) {
         const data = res.resp_data || {}
 

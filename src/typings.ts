@@ -48,7 +48,7 @@ export declare namespace DgPay {
         busi_type: string
         receipt_name: string
         mcc: string
-        card_info: {}
+        card_info: Record<any, any>
         tax_reg_pic?: string
         legal_cert_back_pic?: string
         legal_cert_front_pic?: string
@@ -89,7 +89,7 @@ export declare namespace DgPay {
         contact_name: string
         contact_mobile_no: string
         contact_email: string
-        card_info: {}
+        card_info: Record<any, any>
     }
 
     interface MerchantBasicdataIndvRes {
@@ -153,7 +153,7 @@ export declare namespace DgPay {
         busi_type?: string
         receipt_name?: string
         mcc?: string
-        card_info?: {}
+        card_info?: Record<any, any>
         tax_reg_pic?: string
         legal_cert_back_pic?: string
         legal_cert_front_pic?: string
@@ -179,7 +179,7 @@ export declare namespace DgPay {
         huifu_id: string
         req_date: string
         short_name?: string
-        wx_conf_list: {}
+        wx_conf_list: Record<any, any>
     }
 
     // 商户业务开通
@@ -279,7 +279,7 @@ export declare namespace DgPay {
         huifu_id: string
         req_date: string
         short_name: string
-        wx_conf_list: {}
+        wx_conf_list: Record<any, any>
     }
     interface MerchantBusiModifyRes {
         resp_code: string
