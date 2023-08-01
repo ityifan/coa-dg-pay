@@ -247,4 +247,13 @@ export class DgPayService {
     async TradeAcctpaymentAcctlogQuery(params: DgPay.tradeAcctpaymentAcctlogQueryReq): Promise<DgPay.TradeAcctpaymentBalanceQueryRes> {
         return await this.bin.request('/trade/acctpayment/acctlog/query', params)
     }
+
+    /**
+     * 交易投诉列表
+     * 接口文档地址https://paas.huifu.com/partners/api/#/shgl/tousu/api_shgl_tousu_tscx
+     * @param params
+     */
+    async GetComplaintList(params: DgPay.GetComplaintListReq): Promise<DgPay.GetComplaintListRes> {
+        return await this.bin.request('/merchant/complaint/list/info/query', params)
+    }
 }
