@@ -508,4 +508,29 @@ export declare namespace DgPay {
         resp_code: string
         resp_desc: string
     }
+    // 查询投诉单列表详情
+    interface GetComplaintListReq {
+        req_seq_id: string
+        req_date: string
+        begin_date: string
+        end_date: string
+        offset?: string
+        limit?: string
+        huifu_id?: string
+        reg_name?: string
+        transaction_id?: string
+        complaint_id?: string
+        complaint_state?: string
+        user_complaint_times?: string
+        incoming_user_response?: string
+    }
+
+    interface GetComplaintListRes {
+        resp_code: string
+        resp_desc: string
+        offset: string
+        limit: string
+        total_count: string
+        complaint_list: string
+    }
 }
