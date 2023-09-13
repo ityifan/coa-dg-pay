@@ -6,6 +6,7 @@
   "scripts": {
     "tsc": "tsc -w",
     "build": "rm -rf dist && tsc && cp package.json *.md dist && rm -rf dist/test",
+    "test": "NODE_PATH=dist tsc-watch --onSuccess \"node dist/test\"",
     "lint": "eslint . ",
     "prettier": "prettier -w .",
     "sync": "curl -X PUT 'https://npm.taobao.org/sync/coa-dg-pay?sync_upstream=true'"

@@ -256,4 +256,14 @@ export class DgPayService {
     async GetComplaintList(params: DgPay.GetComplaintListReq): Promise<DgPay.GetComplaintListRes> {
         return await this.bin.request('/merchant/complaint/list/info/query', params)
     }
+
+
+    /**
+     * 交易投诉列表
+     * 接口文档地址https://paas.huifu.com/partners/api/#/shgl/tousu/api_shgl_tousu_tscx
+     * @param params
+     */
+    async PaymentPreorder(params: DgPay.PaymentPreorderReq): Promise<DgPay.PaymentPreorderRes> {
+        return await this.bin.request('/trade/hosting/payment/preorder', params)
+    }
 }

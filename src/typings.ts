@@ -533,4 +533,25 @@ export declare namespace DgPay {
         total_count: string
         complaint_list: string
     }
+
+    interface PaymentPreorderReq {
+        pre_order_type: string,
+        req_date: string,
+        req_seq_id: string,
+        huifu_id: string,
+        trans_amt: string,
+        goods_desc: string,
+        checkout_id: string
+        // miniapp_data: string
+    }
+    interface PaymentPreorderRes {
+        resp_code: string,
+        resp_desc: string,
+        req_date: string,
+        req_seq_id: string,
+        huifu_id: string,
+        trans_amt: string,
+        pre_order_id: string
+        miniapp_data: string
+    }
 }
