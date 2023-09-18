@@ -259,11 +259,22 @@ export class DgPayService {
 
 
     /**
-     * 交易投诉列表
+     * 预下单接口
      * 接口文档地址https://paas.huifu.com/partners/api/#/shgl/tousu/api_shgl_tousu_tscx
      * @param params
      */
     async PaymentPreorder(params: DgPay.PaymentPreorderReq): Promise<DgPay.PaymentPreorderRes> {
-        return await this.bin.request('/trade/hosting/payment/preorder', params)
+        const req = {
+            pre_order_type: '3',
+            req_date: dayjs(_.now()).format('YYYYMMDD'),
+            req_seq_id: params.orderId || CoaError.message('CoaDgPay.MissingField', '缺少orderId参数'),
+            miniapp_data: JSON.stringify({}),
+            huifu_id: params.huifuId || CoaError.message('CoaDgPay.MissingField', '缺少huifuId参数'),
+            checkout_id: this.config.sys_id || CoaError.message('CoaDgPay.MissingField', 'checkoutId'),
+            trans_amt: (params.price / 100).toFixed(2) || CoaError.message('CoaDgPay.MissingField', '缺少price参数'),
+            goods_desc: params.goodsDesc || CoaError.message('CoaDgPay.MissingField', '缺少goodsDesc参数'),
+            notify_url: this.config.notifyUrlMap.jspayNotifyUrl || CoaError.message('CoaDgPay.MissingField', '缺少notifyUrl参数'),
+        }
+        return await this.bin.request('/trade/hosting/payment/preorder', req)
     }
 }
