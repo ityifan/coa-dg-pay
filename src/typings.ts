@@ -119,6 +119,7 @@ export declare namespace DgPay {
         short_name: string
         receipt_name?: string
         ent_type?: string
+        agreement_info_list?: string
         license_type?: string
         license_code?: string
     }
@@ -179,6 +180,7 @@ export declare namespace DgPay {
         huifu_id: string
         req_date: string
         short_name?: string
+        agreement_info?: string
         wx_conf_list: string
     }
 
