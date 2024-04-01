@@ -173,7 +173,7 @@ export class DgPayService {
             org_req_seq_id: params.orderId,
             huifu_id: params.huifuId,
         }
-        return await this.bin.request('/trade/payment/scanpay/query', result)
+        return await this.bin.request('/trade/payment/scanpay/query', result, { '23000001': true })
     }
 
     /**
