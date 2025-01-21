@@ -2,7 +2,7 @@
   "name": "coa-dg-pay",
   "version": "0.0.1",
   "description": "这是一个轻量的汇付支付SDK服务商版 for Node.js",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "tsc": "tsc -w",
     "build": "rm -rf dist && tsc && cp package.json *.md dist && rm -rf dist/test",

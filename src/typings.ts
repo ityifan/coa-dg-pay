@@ -552,4 +552,15 @@ export declare namespace DgPay {
         pre_order_id: string
         miniapp_data: string
     }
+    interface getDmamtReq {
+        huifu_id: string
+    }
+    interface getDmamtRes {
+        resp_code: string,
+        req_date: string,
+        huifu_id: string,
+        acct_id: string,
+        dm_amt: string
+
+    }
 }
