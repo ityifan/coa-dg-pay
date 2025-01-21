@@ -257,6 +257,15 @@ export class DgPayService {
         return await this.bin.request('/merchant/complaint/list/info/query', params)
     }
 
+    /**
+      * 交易投诉列表
+      * 接口文档地址https://paas.huifu.com/open/doc/api/#/jyjs/qx/api_DMqxedcx
+      * @param params
+      */
+    async getDmamt(params: DgPay.getDmamtReq): Promise<DgPay.getDmamtRes> {
+        return await this.bin.request('/trade/settlement/enchashment/dmamt/query', params)
+    }
+
 
     /**
      * 预下单接口
