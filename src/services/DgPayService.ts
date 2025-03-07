@@ -154,6 +154,7 @@ export class DgPayService {
             trans_amt: (params.price / 100).toFixed(2) || CoaError.message('CoaDgPay.MissingField', '缺少price参数'),
             goods_desc: params.goodsDesc || CoaError.message('CoaDgPay.MissingField', '缺少goodsDesc参数'),
             wx_data: JSON.stringify(wx_data),
+            remark: params.remark || '',
             notify_url: this.config.notifyUrlMap.jspayNotifyUrl || CoaError.message('CoaDgPay.MissingField', '缺少notifyUrl参数'),
         }
         return await this.bin.request('/trade/payment/jspay', res, { '00000100': true })
@@ -277,7 +278,7 @@ export class DgPayService {
             pre_order_type: '3',
             req_date: dayjs(_.now()).format('YYYYMMDD'),
             req_seq_id: params.orderId || CoaError.message('CoaDgPay.MissingField', '缺少orderId参数'),
-            miniapp_data: JSON.stringify({}),
+            miniapp_data: JSON.stringify({ remark: params.remark || '', }),
             huifu_id: params.huifuId || CoaError.message('CoaDgPay.MissingField', '缺少huifuId参数'),
             checkout_id: this.config.sys_id || CoaError.message('CoaDgPay.MissingField', 'checkoutId'),
             trans_amt: (params.price / 100).toFixed(2) || CoaError.message('CoaDgPay.MissingField', '缺少price参数'),

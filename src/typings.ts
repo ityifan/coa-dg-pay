@@ -329,6 +329,7 @@ export declare namespace DgPay {
         orderId: string
         appWxaId: string
         openId: string
+        remark?: string,
         goodsDesc: string
     }
     interface TradePaymentJspayReq {
@@ -540,6 +541,7 @@ export declare namespace DgPay {
         orderId: string,
         huifuId: string,
         price: number,
+        remark?: string,
         goodsDesc: string,
     }
     interface PaymentPreorderRes {
