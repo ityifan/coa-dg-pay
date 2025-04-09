@@ -361,12 +361,13 @@ export declare namespace DgPay {
 
     // 聚合正扫查询
     interface TradePaymentScanpayQuery {
-        orgReqDate: number
+        orgReqDate?: number
         huifuId: string
-        orderId: string
+        orderId?: string
+        orgHfSeqId?: string
     }
     interface TradePaymentScanpayQueryReq {
-        org_req_date: string
+        org_req_date?: string
         huifu_id: string
         org_hf_seq_id?: string
         org_req_seq_id?: string
