@@ -166,14 +166,13 @@ export class DgPayService {
      * @param params
      */
     async TradePaymentScanpayQuery(params: DgPay.TradePaymentScanpayQuery): Promise<DgPay.TradePaymentScanpayQueryRes> {
-        params.orgReqDate || CoaError.message('CoaDgPay.MissingField', '缺少orgReqDate参数')
         params.huifuId || CoaError.message('CoaDgPay.MissingField', '缺少huifuId参数')
-        params.orderId || CoaError.message('CoaDgPay.MissingField', '缺少orderId参数')
-        const result: DgPay.TradePaymentScanpayQueryReq = {
-            org_req_date: dayjs(params.orgReqDate).format('YYYYMMDD'),
-            org_req_seq_id: params.orderId,
-            huifu_id: params.huifuId,
-        }
+        params.orderId ? (params.orderId || CoaError.message('CoaDgPay.MissingField', '缺少orderId参数')) : null
+        params.orderId ? (params.orgReqDate || CoaError.message('CoaDgPay.MissingField', '缺少orgReqDate参数')) : null;
+
+        const result: DgPay.TradePaymentScanpayQueryReq = { huifu_id: params.huifuId }
+        params.orderId ? Object.assign(result, { org_req_date: dayjs(params.orgReqDate).format('YYYYMMDD'), org_req_seq_id: params.orderId }) : result.org_hf_seq_id = params.orgHfSeqId;
+
         return await this.bin.request('/trade/payment/scanpay/query', result, { '23000001': true })
     }
 
