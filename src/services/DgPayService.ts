@@ -188,6 +188,7 @@ export class DgPayService {
         params.orgReqDate || CoaError.message('CoaDgPay.MissingField', '缺少orgReqDate参数')
         params.refundId || CoaError.message('CoaDgPay.MissingField', '缺少refundId参数')
         params.refundPrice || CoaError.message('CoaDgPay.MissingField', '缺少refundPrice参数')
+        const remark = params?.remark ? params?.remark : ''
         const result: DgPay.TradePaymentScanpayRefundReq = {
             huifu_id: params.huifuId,
             req_seq_id: params.refundId,
@@ -196,6 +197,7 @@ export class DgPayService {
             req_date: dayjs(_.now()).format('YYYYMMDD'),
             org_req_date: dayjs(params.orgReqDate).format('YYYYMMDD'),
             notify_url: this.bin.config.notifyUrlMap.refundNotifyUrl,
+            remark
         }
 
         return await this.bin.request('/trade/payment/scanpay/refund', result, { '00000100': true })
