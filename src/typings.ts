@@ -411,6 +411,7 @@ export declare namespace DgPay {
         refundPrice: number
         orgReqDate: number
         orderId: string
+        remark?: string
     }
     interface TradePaymentScanpayRefundReq {
         req_date: string
